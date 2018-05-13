@@ -27,14 +27,18 @@ if (proxy !== undefined) {
   log(`noProxyForDestination: ${noProxyForDestination}`);
 }
 
+let axiosOptions = {
+  headers: { 'Content-Type': 'application/json' },
+};
+if (noProxyForDestination) {
+  axiosOptions.proxy = false;
+}
+
 const rtmClient = new RTMClient(token, options);
 
 rtmClient.on('message', event => {
   log('Received a message.');
-  axios.post(destination, event, {
-    headers: { 'Content-Type': 'application/json' },
-    proxy: !noProxyForDestination,
-  })
+  axios.post(destination, event, axiosOptions)
     .then(response => {
       log(`${response.status}: ${response.statusText}`);
     })
