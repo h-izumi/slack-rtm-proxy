@@ -1,0 +1,15 @@
+{
+  "name": "slack-rtm-proxy",
+  "version": "0.1.0",
+  "description": "Proxy for Slack Real Time Messaging API",
+  "main": "index.js",
+  "author": "Hayto IZUMI",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^4.2.2",
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.1",
+    "https-proxy-agent": "^2.2.1",
+    "moment": "^2.22.1"
+  }
+}
