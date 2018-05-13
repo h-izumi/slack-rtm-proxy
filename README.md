@@ -1,4 +1,4 @@
-Proxy for Slack Realtime Messaging API
+Proxy Client for Slack Realtime Messaging API
 =====
 
 ## Usage
